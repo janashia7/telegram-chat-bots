@@ -4,9 +4,7 @@ import logger from './src/logger.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-// const TOKEN = config.get("token");
-const TOKEN = process.env.TOKEN;
-const bot = new TelegramBot(TOKEN, { polling: true });
+const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 bot.on('message', (msg) => {
   logger.info(msg);
   const {
